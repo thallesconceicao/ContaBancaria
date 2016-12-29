@@ -1,0 +1,12 @@
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\bin\Debug\ContaBancaria2.exe.config
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.csprojResolveAssemblyReference.cache
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.Form1.resources
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.Properties.Resources.resources
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.csproj.GenerateResource.Cache
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\bin\Debug\ContaBancaria2.exe
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\bin\Debug\ContaBancaria2.pdb
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.exe
+c:\users\thalles\documents\visual studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.pdb
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\bin\Debug\ContaBancaria2.exe.config
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.exe
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.pdb

@@ -1,0 +1,6 @@
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\bin\Debug\ContaBancaria2.exe.config
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.exe
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria2\ContaBancaria2\obj\Debug\ContaBancaria2.pdb
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria\ContaBancaria2\bin\Debug\ContaBancaria2.exe.config
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria\ContaBancaria2\obj\Debug\ContaBancaria2.exe
+D:\Documentos\Visual Studio 2015\Projects\ContaBancaria\ContaBancaria2\obj\Debug\ContaBancaria2.pdb
