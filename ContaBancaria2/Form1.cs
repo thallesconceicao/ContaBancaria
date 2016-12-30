@@ -110,6 +110,9 @@ namespace ContaBancaria2
         /*
          * Importa o texto de um arquivo txt para a textbox no formulário
          * 
+         * Se estiver inspirado posso usar como um bd para as contas
+         * Arcaico, mas util para aprendizado...
+         * 
          */
         private void importaDadosDeArquivo()
         {
