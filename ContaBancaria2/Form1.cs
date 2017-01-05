@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using ContaBancaria2.Dao;
 
 namespace ContaBancaria2
 {
@@ -20,7 +21,19 @@ namespace ContaBancaria2
 
         private void Form1_Load(object sender, EventArgs e) {
 
-            Conta [] contas = new ContaCorrente[3];
+            List<Dictionary<string, string>> listaContas = new List<Dictionary<string, string>>();
+
+            TxtDao testeDao = new TxtDao("contas.txt");
+
+            listaContas = testeDao.listar();
+
+            foreach (Dictionary<string, string> conta in listaContas) {
+
+                MessageBox.Show(conta["tipo"]);
+
+            }
+
+            Conta [] contas = new ContaCorrente[3];//mudar para lista
 
             contas[0] = new ContaCorrente(1);
             contas[1] = new ContaCorrente(2);
@@ -110,8 +123,6 @@ namespace ContaBancaria2
         /*
          * Importa o texto de um arquivo txt para a textbox no formulário
          * 
-         * Se estiver inspirado posso usar como um bd para as contas
-         * Arcaico, mas util para aprendizado...
          * 
          */
         private void importaDadosDeArquivo()
