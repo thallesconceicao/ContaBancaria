@@ -27,19 +27,28 @@ namespace ContaBancaria2
 
             listaContas = testeDao.listar();
 
+            List<Conta> listaContasCombo = new List<Conta>();
+
             foreach (Dictionary<string, string> conta in listaContas) {
 
-                MessageBox.Show(conta["tipo"]);
+                Conta cont;
+                int numeroDaConta = Convert.ToInt32(conta["numero"]);
+                double saldo = Convert.ToDouble(conta["saldo"]);
+
+                switch (conta["tipo"])
+                { 
+                    case "corrente": cont = new ContaCorrente(numeroDaConta, saldo);
+                        break;
+                    case "poupanca": cont = new ContaPoupanca(numeroDaConta, saldo);
+                        break;
+                    default: throw new Exception("Tipo de conta desconhecido");
+                }
+
+                listaContasCombo.Add(cont);
 
             }
 
-            Conta [] contas = new ContaCorrente[3];//mudar para lista
-
-            contas[0] = new ContaCorrente(1);
-            contas[1] = new ContaCorrente(2);
-            contas[2] = new ContaCorrente(3);
-
-            foreach (Conta conta in contas) {
+            foreach (Conta conta in listaContasCombo) {
                 cmbConta.Items.Add(conta);
             }
 
@@ -57,7 +66,7 @@ namespace ContaBancaria2
                 if (true)
                 {
 
-                    conta.depositar(Convert.ToInt16(this.txtValor.Text));//validar o deposito dps
+                    conta.depositar(Convert.ToDouble(this.txtValor.Text));//validar o deposito dps
 
                     this.exibirSaldoAtualizado(conta);
                     MessageBox.Show("Depósito realizado com sucesso!");
@@ -87,7 +96,7 @@ namespace ContaBancaria2
                 if (true)//validar se uma conta foi selecionada
                 {
 
-                    conta.sacar(Convert.ToInt16(this.txtValor.Text));//validar o deposito dps
+                    conta.sacar(Convert.ToDouble(this.txtValor.Text));//validar o deposito dps
 
                     this.exibirSaldoAtualizado(conta);
                     MessageBox.Show("Saque realizado com sucesso!");

@@ -9,7 +9,7 @@ namespace ContaBancaria2
     abstract class Conta
     {
         protected int numero;
-        protected int saldo;
+        protected double saldo;
 
         /*public Conta(int n) {
 
@@ -29,11 +29,34 @@ namespace ContaBancaria2
 
         }
 
-        public abstract void sacar(int valor);
+        public void sacar(double valor)
+        {
 
-        public abstract void depositar(int valor);
+            if (valor < 1)
+            {
+                throw new Exception("Por favor informe um valor positivo para o saque.");
+            }
+            if (valor > saldo)
+            {
+                throw new Exception("O valor a ser sacado não deve ser maior que o saldo.");
+            }
 
-        public int obterSaldo() {
+            saldo -= valor;
+
+        }
+
+        public void depositar(double valor)
+        {
+            if (valor < 1)
+            {
+                throw new Exception("Por favor informe um valor positivo para o depósito.");
+            }
+
+            saldo += valor;
+
+        }
+
+        public double obterSaldo() {
 
             return this.saldo;
 

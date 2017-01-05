@@ -1,2 +1,2 @@
-numero:1;tipo:corrente;saldo:0;
-numero:2;tipo:poupanca;saldo:0;
+numero:1;tipo:corrente;saldo:200;
+numero:2;tipo:poupanca;saldo:350;

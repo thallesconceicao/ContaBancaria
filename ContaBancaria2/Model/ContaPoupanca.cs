@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace ContaBancaria2
 {
-    class ContaPoupanca
+    class ContaPoupanca : Conta
     {
+
+        public ContaPoupanca(int n, double s)
+        {
+
+            this.numero = n;
+            this.saldo = s;
+
+        }
+
+        public override string ToString()
+        {
+            return "Conta Poupanca: nº" + numero;
+        }
+
     }
 }

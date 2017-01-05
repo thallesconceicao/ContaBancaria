@@ -9,44 +9,17 @@ namespace ContaBancaria2
     class ContaCorrente : Conta
     {
 
-        public ContaCorrente(int n)
+        public ContaCorrente(int n, double s)
         {
 
-            numero = n;
-            saldo = 0;
+            this.numero = n;
+            this. saldo = s;
 
         }
 
         public override string ToString()
         {
             return "Conta Corrente: nº" + numero;
-        }
-
-        public override void sacar(int valor)
-        {
-
-            if (valor < 1)
-            {
-                throw new Exception("Por favor informe um valor positivo para o saque.");
-            }
-            if (valor > saldo)
-            {
-                throw new Exception("O valor a ser sacado não deve ser maior que o saldo.");
-            }
-
-            saldo -= valor;
-
-        }
-
-        public override void depositar(int valor)
-        {
-            if (valor < 1)
-            {
-                throw new Exception("Por favor informe um valor positivo para o depósito.");
-            }
-
-            saldo += valor;
-
         }
 
     }
