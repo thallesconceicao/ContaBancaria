@@ -1,6 +1,6 @@
 ﻿namespace ContaBancaria2
 {
-    partial class Form1
+    partial class FormCaixaEletronico
     {
         /// <summary>
         /// Required designer variable.

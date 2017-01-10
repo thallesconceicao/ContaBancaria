@@ -12,9 +12,9 @@ using ContaBancaria2.Controller;
 
 namespace ContaBancaria2
 {
-    public partial class Form1 : Form
+    public partial class FormCaixaEletronico : Form
     {
-        public Form1()
+        public FormCaixaEletronico()
         {
             InitializeComponent();
         }

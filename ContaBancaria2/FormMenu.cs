@@ -19,12 +19,12 @@ namespace ContaBancaria2
 
         private void btnCadastroContas_Click(object sender, EventArgs e)
         {
-            new Form2().Show();
+            new FormCadastroContas().Show();
         }
 
         private void btnCaixaEletronico_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new FormCaixaEletronico().Show();
         }
     }
 }

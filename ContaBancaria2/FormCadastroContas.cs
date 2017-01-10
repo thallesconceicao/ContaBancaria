@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace ContaBancaria2
 {
-    public partial class Form2 : Form
+    public partial class FormCadastroContas : Form
     {
 
         public const string CONTA_CORRENTE = "conta_corrente";
         public const string CONTA_POUPANCA = "conta_poupanca";
 
-        public Form2()
+        public FormCadastroContas()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace ContaBancaria2
 {
-    partial class Form2
+    partial class FormCadastroContas
     {
         /// <summary>
         /// Required designer variable.
