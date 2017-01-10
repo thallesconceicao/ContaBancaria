@@ -24,9 +24,6 @@ namespace ContaBancaria2
             //adiciona as combos carregadas do arquivo a combobox
             this.adicionarContas();
 
-            //importa os dados de um arquivo para a combobox no formulário
-            this.importaDadosDeArquivo();
-
         }
 
         private void btnDeposito_Click(object sender, EventArgs e)
@@ -50,7 +47,7 @@ namespace ContaBancaria2
                 }
             }
             catch (FormatException excecao) {
-                MessageBox.Show("Por favor informe um valor inteiro para as operações");
+                MessageBox.Show("Por favor informe um valor inteiro para as operações" + excecao.Message);
             }
             catch (Exception excecao)
             {
@@ -68,7 +65,7 @@ namespace ContaBancaria2
                 if (true)//validar se uma conta foi selecionada
                 {
 
-                    conta.sacar(Convert.ToDouble(this.txtValor.Text));//validar o deposito dps
+                    conta.sacar(Convert.ToDouble(this.txtValor.Text));//validar o saque dps
 
                     this.exibirSaldoAtualizado(conta);
                     MessageBox.Show("Saque realizado com sucesso!");
@@ -81,7 +78,7 @@ namespace ContaBancaria2
             }
             catch (FormatException excecao)
             {
-                MessageBox.Show("Por favor informe um valor inteiro para as operações");
+                MessageBox.Show("Por favor informe um valor inteiro para as operações" + excecao.Message);
             }
             catch (Exception excecao)
             {
@@ -99,76 +96,6 @@ namespace ContaBancaria2
 
         private void exibirSaldoAtualizado(Conta conta) {
             this.txtSaldo.Text = Convert.ToString(conta.obterSaldo());
-        }
-
-        /*
-         * Importa o texto de um arquivo txt para a textbox no formulário
-         * 
-         * 
-         */
-        private void importaDadosDeArquivo()
-        {
-
-            string nomeArquivo = "texto.txt";
-
-            if (File.Exists(nomeArquivo))
-            {
-
-                Stream entrada = File.Open(nomeArquivo, FileMode.Open);
-                StreamReader leitor = new StreamReader(entrada);
-
-                string linha = leitor.ReadLine();
-                while (linha != null)
-                {
-
-                    this.txtExportar.Text += (linha+"\r\n");
-                    linha = leitor.ReadLine();
-
-                }
-
-                leitor.Close();
-                entrada.Close();
-
-            }
-            else {
-                MessageBox.Show("Arquivo "+ nomeArquivo + " não encontrado");
-            }
-
-        }
-
-        private void gravarDadosEmArquivo() {
-
-            try
-            {
-                string arquivo = "texto.txt";
-                Stream saida;
-
-                if (File.Exists(arquivo)){
-                    saida = File.Open(arquivo, FileMode.Create);
-                }
-                else{
-                    saida = File.Open(arquivo, FileMode.Append);
-                }
-
-                StreamWriter escritor = new StreamWriter(saida);
-
-                escritor.Write(this.txtExportar.Text);
-
-                escritor.Close();
-                saida.Close();
-
-                MessageBox.Show("gravado com sucesso");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro ao gravar texto em arquivo "+e.Message);
-            }
-
-        }
-
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-            this.gravarDadosEmArquivo();
         }
 
         private void adicionarContas() {

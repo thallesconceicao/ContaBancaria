@@ -36,8 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtExportar = new System.Windows.Forms.TextBox();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeposito
@@ -111,32 +109,11 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Valor";
             // 
-            // txtExportar
-            // 
-            this.txtExportar.Location = new System.Drawing.Point(45, 198);
-            this.txtExportar.Multiline = true;
-            this.txtExportar.Name = "txtExportar";
-            this.txtExportar.Size = new System.Drawing.Size(186, 77);
-            this.txtExportar.TabIndex = 8;
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnExportar.Location = new System.Drawing.Point(156, 291);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 23);
-            this.btnExportar.TabIndex = 9;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 338);
-            this.Controls.Add(this.btnExportar);
-            this.Controls.Add(this.txtExportar);
+            this.ClientSize = new System.Drawing.Size(360, 219);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -163,8 +140,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtExportar;
-        private System.Windows.Forms.Button btnExportar;
     }
 }
 
