@@ -99,5 +99,41 @@ namespace ContaBancaria2.Dao
 
         }
 
+        /*
+         * Insere uma string no arquivo de texto informado
+         */
+        public Boolean inserir(String linha) {
+
+            try
+            {
+
+                Stream saida;
+
+                if (this.arquivoExiste(this.arquivoDados))
+                {
+                    saida = File.Open(this.arquivoDados, FileMode.Create);
+                }
+                else
+                {
+                    saida = File.Open(this.arquivoDados, FileMode.Append);
+                }
+
+                StreamWriter escritor = new StreamWriter(saida);
+
+                escritor.Write(linha);
+
+                escritor.Close();
+                saida.Close();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Erro ao gravar texto em arquivo " + e.Message);
+            }
+
+        }
+
     }
 }
