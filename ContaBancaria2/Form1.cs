@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using ContaBancaria2.Dao;
+using ContaBancaria2.Controller;
 
 namespace ContaBancaria2
 {
@@ -21,36 +21,8 @@ namespace ContaBancaria2
 
         private void Form1_Load(object sender, EventArgs e) {
 
-            List<Dictionary<string, string>> listaContas = new List<Dictionary<string, string>>();
-
-            TxtDao testeDao = new TxtDao("contas.txt");
-
-            listaContas = testeDao.listar();
-
-            List<Conta> listaContasCombo = new List<Conta>();
-
-            foreach (Dictionary<string, string> conta in listaContas) {
-
-                Conta cont;
-                int numeroDaConta = Convert.ToInt32(conta["numero"]);
-                double saldo = Convert.ToDouble(conta["saldo"]);
-
-                switch (conta["tipo"])
-                { 
-                    case "corrente": cont = new ContaCorrente(numeroDaConta, saldo);
-                        break;
-                    case "poupanca": cont = new ContaPoupanca(numeroDaConta, saldo);
-                        break;
-                    default: throw new Exception("Tipo de conta desconhecido");
-                }
-
-                listaContasCombo.Add(cont);
-
-            }
-
-            foreach (Conta conta in listaContasCombo) {
-                cmbConta.Items.Add(conta);
-            }
+            //adiciona as combos carregadas do arquivo a combobox
+            this.adicionarContas();
 
             //importa os dados de um arquivo para a combobox no formulário
             this.importaDadosDeArquivo();
@@ -198,5 +170,18 @@ namespace ContaBancaria2
         {
             this.gravarDadosEmArquivo();
         }
+
+        private void adicionarContas() {
+
+            ContaController controladora = new ContaController();
+            List<Conta> listaContasCombo = controladora.listarContas();
+
+            foreach (Conta conta in listaContasCombo)
+            {
+                cmbConta.Items.Add(conta);
+            }
+
+        }
+
     }
 }
